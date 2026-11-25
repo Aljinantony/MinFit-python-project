@@ -1,0 +1,119 @@
+# Get all members
+###
+GET http://127.0.0.1:8000/members/
+Accept: application/json
+
+
+# Add a new member
+###
+POST http://127.0.0.1:8000/members/
+Content-Type: application/json
+
+{
+    "name": "ALJIN",
+    "age": 25,
+    "phone": "9876543210",
+    "email": "ALJI@gmail.com"
+}
+
+
+
+# View a particular member
+###
+GET http://127.0.0.1:8000/members/1/
+Accept: application/json
+
+
+# Update member details
+###
+PUT http://127.0.0.1:8000/members/1/
+Content-Type: application/json
+
+{
+    "name": "ALJIN ANTONY",
+    "age": 20,
+    "phone": "9744161876",
+    "email": "ALJII@gmail.com"
+}
+
+
+# Delete a member
+###
+DELETE http://127.0.0.1:8000/members/3/
+
+#To add membership
+###
+POST http://127.0.0.1:8000/memberships/
+Content-Type: application/json
+
+{
+    "member": 1,
+    "plan": "Monthly",
+    "start_date": "2026-11-25",
+    "end_date": "2026-12-25",
+    "status": "Active"
+}
+
+#to view all membership
+###
+GET http://127.0.0.1:8000/memberships/
+
+#view membership
+
+###
+GET http://127.0.0.1:8000/memberships/
+#update membership
+###
+PUT http://127.0.0.1:8000/memberships/
+Content-Type: application/json
+
+{
+    "member": 1,
+    "plan": "Quarterly",
+    "start_date": "2026-11-25",
+    "end_date": "2027-02-25",
+    "status": "Active"
+}
+
+#delete membership
+
+###
+DELETE http://127.0.0.1:8000/memberships/3/
+
+#payment
+
+###
+POST http://127.0.0.1:8000/payments/
+Content-Type: application/json
+
+{
+    "member": 1,
+    "membership": 2,
+    "amount": "1500.00",
+    "payment_method": "UPI",
+    "status": "Paid"
+}
+
+#paymentdetails
+
+###
+PUT http://127.0.0.1:8000/payments/2/
+Content-Type: application/json
+
+{
+    "member": 1,
+    "membership": 2,
+    "amount": "2000.00",
+    "payment_method": "Card",
+    "status": "Paid"
+}
+
+#delete payment
+
+###
+DELETE http://127.0.0.1:8000/payments/1/
+
+#dashboard
+
+###
+GET http://127.0.0.1:8000/dashboard/
